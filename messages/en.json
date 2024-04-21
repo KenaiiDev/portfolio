@@ -1,0 +1,19 @@
+{
+  "homeMetaTitle": "Lucas Villanueva - Full Stack Developer",
+  "homeMetaDescription": "FullStack Developer based in Argentina.",
+  "projectsMetaTitle": "Projects - Lucas Villanueva",
+  "projectsMetaDescription": "Here are some of the projects I have worked on.",
+  "greetings": "Hi 👋, i‘m",
+  "name": "Lucas",
+  "lastName": "Villanueva",
+  "subtitle": "Full Stack Developer",
+  "age": "Age",
+  "years": "Years old",
+  "cvLink": "https://drive.google.com/file/d/15s2Z3o4-trRGISiLy7t4hWyx4d-DcxRQ/view?usp=drive_link",
+  "cvAlt": "Download resume",
+  "aboutMe": "About me",
+  "aboutMeText": "Experienced Fullstack developer in React, HTML, CSS, and JavaScript. Detail-oriented and passionate about learning and experimenting with new technologies.",
+  "projectsTitle": "Projects",
+  "projectsParagraph": "Here are some of the projects I have worked on.",
+  "techUsage": "Tech used:"
+}

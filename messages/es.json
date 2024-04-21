@@ -1,0 +1,19 @@
+{
+  "homeMetaTitle": "Lucas Villanueva - Desarrollador Full Stack",
+  "homeMetaDescription": "Desarrollador Full Stack localizado en Buenos Aires, Argentina.",
+  "projectsMetaTitle": "Proyectos - Lucas Villanueva",
+  "projectsMetaDescription": "Estos son algunos de los proyectos en los que he trabajado.",
+  "greetings": "Hola 👋, soy",
+  "name": "Lucas",
+  "lastName": "Villanueva",
+  "subtitle": "Desarrollador Full Stack",
+  "age": "Edad",
+  "years": "Años",
+  "cvLink": "https://drive.google.com/file/d/1k51kBabb-_NAQD4r9ftMtFUImm1QplM_/view?usp=drive_link",
+  "cvAlt": "Descargar Curriculum Vitae",
+  "aboutMe": "Acerca de mí",
+  "aboutMeText": "Desarrollador Fullstack con experiencia en React, HTML, CSS y JavaScript. Orientado a detalles y apasionado por aprender y experimentar con nuevas tecnologías.",
+  "projectsTitle": "Proyectos",
+  "projectsParagraph": "Estos son algunos de los proyectos en los que he trabajado.",
+  "techUsage": "Tecnologías utilizadas:"
+}
