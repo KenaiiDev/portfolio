@@ -46,10 +46,10 @@ export default async function Home({
           </span>
         </div>
         <Image
-          className="absolute -bottom-8 -right-14 md:-right-16 lg:-right-24 w-7/12 md:w-4/6 z-30 image-gradient"
+          className="absolute -bottom-14 -right-14 md:-right-16 lg:-right-24 w-7/12 md:w-4/6 z-30 image-gradient"
           src={ProfileImage}
-          width={350}
-          height={350}
+          width={300}
+          height={300}
           alt="Lucas Villanueva"
         />
       </article>
