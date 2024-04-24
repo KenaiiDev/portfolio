@@ -65,6 +65,7 @@ const Background = React.memo(function Background({ minSize = 500, maxSize = 800
       {blobProps.map((blob, index) => {
         return (
           <motion.img
+            alt="Background animation"
             key={index}
             className="absolute mix-blend-multiply"
             src={blob.src}
