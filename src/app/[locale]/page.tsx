@@ -79,7 +79,7 @@ export default async function Home({
       </article>
       {/*ABOUT ME */}
       <article className="order-5 relative transition-all ease-in duration-200 aspect-auto col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1]">
-        <div className="mx-auto px-3 py-3 w-full h-full z-10 flex flex-col justify-evenly text-purple-haze-100 font-reno">
+        <div className="mx-auto px-6 py-3 w-full h-full z-10 flex flex-col justify-evenly text-purple-haze-100 font-reno">
           <h2 className="text-3xl my-1">{t("aboutMe")}</h2>
           <p className="text-base">{t("aboutMeText")}</p>
         </div>
