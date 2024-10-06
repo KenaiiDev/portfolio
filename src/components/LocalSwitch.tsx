@@ -16,7 +16,12 @@ export default function LocalSwitch({ locale, path = "" }: Props) {
   const handleLocaleChange = () => {
     const newLocale = isChecked ? "en" : "es";
     setIsChecked(!isChecked);
-    router.replace(`/${newLocale}${path}`);
+    const reverseEvent = new Event("reverseAnimation");
+    window.dispatchEvent(reverseEvent);
+
+    setTimeout(() => {
+      router.replace(`/${newLocale}${path}`);
+    }, 500);
   };
 
   return (
