@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import localFont from "next/font/local";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { LOCALES } from "@/constants/locales";
+import { JetBrains_Mono, Fira_Code } from "next/font/google";
 
 import "./globals.css";
 import Background from "@/components/background";
@@ -10,6 +11,18 @@ const Renogare = localFont({
   src: "../../../public/fonts/Renogare-Regular.otf",
   display: "swap",
   variable: "--font-renogare",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-jetbrains",
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-firacode",
 });
 
 export async function generateMetadata({
@@ -39,7 +52,10 @@ export default async function LocaleLayout({
   unstable_setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${Renogare.className}`}>
+    <html
+      lang={locale}
+      className={`${Renogare.className} ${jetBrainsMono.variable} ${firaCode.variable}`}
+    >
       <body>
         <main className="bg-periwinkle-gray-950 w-screen max-w-full min-h-screen justify-center relative">
           <Background />

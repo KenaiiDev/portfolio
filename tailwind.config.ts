@@ -50,8 +50,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        mono: ["VT323", "monospace"],
+        mono: ["var(--font-jetbrains)", "monospace"],
         reno: ["var(--font-renogare)", "monospace"],
+        firacode: ["var(--font-firacode)", "monospace"],
       },
     },
   },
