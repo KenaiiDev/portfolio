@@ -23,6 +23,7 @@ export default async function Page({
   const t = await getTranslations();
   return (
     <>
+      {/* BACK BUTTON */}
       <AnimatedArticle className="relative aspect-auto col-span-2 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100 py-4 px-2">
         <TransitionLink href="/">
           <div className="w-full flex justify-evenly">
@@ -39,6 +40,7 @@ export default async function Page({
           </div>
         </TransitionLink>
       </AnimatedArticle>
+      {/* LANG SWITCH */}
       <AnimatedArticle
         direction="right"
         className="relative flex items-center justify-center col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
@@ -57,21 +59,28 @@ export default async function Page({
             className="w-full rounded-xl flex-grow my-4"
           />
         );
+        const linkStyles =
+          "flex-1 py-4 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100 transition-all ease-in flex items-center justify-center";
         return (
           <AnimatedArticle
             key={index}
             direction={direction}
-            className="col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1] px-4 py-6 flex"
+            className="col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1] px-4 py-6 flex flex-col md:flex-row items-center gap-4"
+            hoverScale={false}
           >
-            <div className="w-full mx-4 h-auto">{projectImage}</div>
-            <div className="flex flex-col mx-4 text-center w-full text-white">
+            {/* PROJECT IMAGE */}
+            <div className="w-full h-auto flex items-center justify-center">
+              {projectImage}
+            </div>
+            {/* PROJECT DESCRIPTION */}
+            <div className="flex flex-col text-center w-full max-w-lg text-white font-firacode">
               <h2 className="text-2xl my-2 underline">{project[lang].title}</h2>
-              <p className="text-2xl my-2 font-bold">
+              <p className="text-base my-2 font-bold">
                 {project[lang].description}
               </p>
               <p>
-                <h3 className="text-left">{t("techUsage")}</h3>
-                <ul className="flex gap-1 text-sm  flex-wrap">
+                <h3 className="text-left text-sm">{t("techUsage")}</h3>
+                <ul className="flex gap-1 text-xs flex-wrap">
                   {project.tech.map((tech, index) => (
                     <li key={index}>
                       {index !== 0 ? "- " : ""}
@@ -80,48 +89,45 @@ export default async function Page({
                   ))}
                 </ul>
               </p>
-              <div className="flex h-full items-center justify-evenly">
-                <div className="px-14 py-6 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100 transition-all ease-in">
+              {/* PROJECT LINKS */}
+              <div className="w-full max-w-lg h-full mx-auto mt-4 items-center justify-evenly flex gap-8">
+                <Link
+                  href={project.repoURL}
+                  target="_blank"
+                  className={linkStyles}
+                >
                   <Image
                     src={externalLink}
                     width={15}
                     alt="Link"
                     className="absolute right-3 top-3 md:w-6"
                   />
-                  <Link
-                    href={project.repoURL}
-                    className="w-full h-full flex items-center justify-center text-white "
-                    target="_blank"
-                  >
-                    <Image
-                      src={githubIcon}
-                      alt="Github icon"
-                      width={50}
-                      height={50}
-                    />
-                  </Link>
-                </div>
+                  <Image
+                    src={githubIcon}
+                    alt="Github icon"
+                    width={50}
+                    height={50}
+                  />
+                </Link>
                 {project.liveURL && (
-                  <div className="px-14 py-6 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100 transition-all ease-in">
+                  <Link
+                    href={project.liveURL}
+                    target="_blank"
+                    className={linkStyles}
+                  >
                     <Image
                       src={externalLink}
                       width={15}
                       alt="Link"
                       className="absolute right-3 top-3 md:w-6"
                     />
-                    <Link
-                      href={project.liveURL}
-                      className="w-full h-full flex items-center justify-center text-white "
-                      target="_blank"
-                    >
-                      <Image
-                        src={liveIcon}
-                        alt="Live icon"
-                        width={50}
-                        height={50}
-                      />
-                    </Link>
-                  </div>
+                    <Image
+                      src={liveIcon}
+                      alt="Live icon"
+                      width={50}
+                      height={50}
+                    />
+                  </Link>
                 )}
               </div>
             </div>

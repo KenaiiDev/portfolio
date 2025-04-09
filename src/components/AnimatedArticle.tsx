@@ -6,6 +6,7 @@ interface AnimatedArticleProps extends MotionProps {
   children: React.ReactNode;
   className?: string;
   direction?: "left" | "right";
+  hoverScale?: boolean;
 }
 
 const leftVariants = {
@@ -22,17 +23,19 @@ const AnimatedArticle = ({
   children,
   className = "",
   direction = "left",
+  hoverScale = true,
   ...props
 }: AnimatedArticleProps) => {
-  //TODO: Make the article animate from the direction to the wanted pos. Items outside the screen should be hidden until they are in the screen.
-  //TODO: Animate the articles when user click a TransitionLink component. Items should animate reverse as the entrance animation
-
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const randomDelay = Math.random() * 0.25;
+
+  const hoverEffect = hoverScale
+    ? { scale: 1.02, transition: { duration: 0.15 } }
+    : {};
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -68,7 +71,8 @@ const AnimatedArticle = ({
       animate={controls}
       variants={direction === "left" ? leftVariants : rightVariants}
       initial="hidden"
-      transition={{ ease: "easeOut", duration: 0.25, delay: randomDelay }}
+      transition={{ ease: "easeOut", duration: 0.3, delay: randomDelay }}
+      whileHover={hoverEffect}
       {...props}
     >
       {children}

@@ -18,9 +18,6 @@ import projectsBg from "@/images/bg/projects.gif";
 import pageMove from "@/images/icons/page-move.svg";
 import TransitionLink from "@/components/TransitionLink";
 
-// TODO: Fix paddings in boxes
-// TODO: Add hover animations
-
 export default async function Home({
   params: { locale },
 }: {
@@ -43,7 +40,7 @@ export default async function Home({
           <span className="font-mono md:text-xl lg:text-xl">
             {t("greetings")}
           </span>
-          <h1 className="flex flex-col items-start text-3xl md:text-4xl lg:text-6xl font-firacode font-bold leading-tight">
+          <h1 className="flex flex-col items-start text-3xl md:text-4xl lg:text-6xl font-firacode font-bold">
             <span>{t("name")}</span>
             <span>{t("lastName")}</span>
           </h1>
@@ -62,7 +59,7 @@ export default async function Home({
       {/*LANG SWITCH */}
       <AnimatedArticle
         direction="right"
-        className="order-2 relative flex items-center justify-center px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
+        className="order-2 relative flex items-center justify-center md:px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
         <LocalSwitch locale={locale} />
       </AnimatedArticle>
