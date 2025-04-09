@@ -57,7 +57,7 @@ export default async function LocaleLayout({
       className={`${Renogare.className} ${jetBrainsMono.variable} ${firaCode.variable}`}
     >
       <body>
-        <main className="bg-periwinkle-gray-950 w-screen max-w-full min-h-screen justify-center relative">
+        <main className="bg-periwinkle-gray-950 w-full overflow-x-hidden justify-center relative">
           <Background />
           {children}
         </main>
