@@ -59,21 +59,21 @@ export default async function Home({
       {/*LANG SWITCH */}
       <AnimatedArticle
         direction="right"
-        className="order-2 relative flex items-center justify-center md:px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
+        className="order-2 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
         <LocalSwitch locale={locale} />
       </AnimatedArticle>
       {/* AGE */}
       <AnimatedArticle
         direction="right"
-        className="order-3 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
+        className="order-3 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
         <Age locale={locale} />
       </AnimatedArticle>
       {/*CV */}
       <AnimatedArticle
         direction="left"
-        className="order-4 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
+        className="order-4 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
       >
         <Image
           src={externalLink}
