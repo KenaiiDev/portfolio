@@ -4,6 +4,8 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { LOCALES } from "@/constants/locales";
 import { JetBrains_Mono, Fira_Code } from "next/font/google";
 
+import { getBlobSources } from "@/lib/getBlobSources";
+
 import "./globals.css";
 import Background from "@/components/background";
 
@@ -12,6 +14,8 @@ const Renogare = localFont({
   display: "swap",
   variable: "--font-renogare",
 });
+
+const blobSources = await getBlobSources();
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -58,7 +62,7 @@ export default async function LocaleLayout({
     >
       <body>
         <main className="bg-periwinkle-gray-950 w-full overflow-x-hidden justify-center relative">
-          <Background />
+          <Background blobSources={blobSources} />
           {children}
         </main>
       </body>
