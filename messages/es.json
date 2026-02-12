@@ -15,5 +15,8 @@
   "aboutMeText": "Desarrollador Fullstack con experiencia en React, HTML, CSS y JavaScript. Orientado a detalles y apasionado por aprender y experimentar con nuevas tecnologías.",
   "projectsTitle": "Proyectos",
   "projectsParagraph": "Estos son algunos de los proyectos en los que he trabajado.",
-  "techUsage": "Tecnologías utilizadas:"
+  "techUsage": "Tecnologías utilizadas:",
+  "notFoundTitle": "Página No Encontrada",
+  "notFoundDescription": "La página que buscas no existe o ha sido movida.",
+  "notFoundButton": "Volver al inicio"
 }
