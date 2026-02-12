@@ -2,13 +2,12 @@ import { MetadataRoute } from "next";
 import { LOCALES } from "@/constants/locales";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://your-domain.com"; // Cambia esto por tu dominio
+  const baseUrl = "https://www.lucasvillanueva.tech/";
 
   const routes = ["", "/projects"];
 
   const sitemap: MetadataRoute.Sitemap = [];
 
-  // Generar URLs para cada locale y ruta
   LOCALES.forEach((locale) => {
     routes.forEach((route) => {
       sitemap.push({

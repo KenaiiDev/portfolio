@@ -29,7 +29,6 @@ export default async function Home({
 
   return (
     <section className="w-full px-4 py-6 mx-auto max-w-screen-lg grid grid-cols-3 md:grid-cols-4 gap-4">
-      {/*PRESENTATION */}
       <AnimatedArticle
         direction="left"
         className="order-1 relative justify-between px-6 py-6 overflow-hidden duration-200 aspect-[2/1] md:aspect-auto col-span-3 row-span-2 backdrop-blur-3xl rounded-xl bg-black/[.1]"
@@ -55,21 +54,18 @@ export default async function Home({
           priority
         />
       </AnimatedArticle>
-      {/*LANG SWITCH */}
       <AnimatedArticle
         direction="right"
         className="order-2 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
         <LocalSwitch locale={locale} />
       </AnimatedArticle>
-      {/* AGE */}
       <AnimatedArticle
         direction="right"
         className="order-3 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
         <Age locale={locale} ageLabel={t("age")} yearsLabel={t("years")} />
       </AnimatedArticle>
-      {/*CV */}
       <AnimatedArticle
         direction="left"
         className="order-4 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
@@ -89,7 +85,6 @@ export default async function Home({
           <Image src={cvIcon} width={60} className="md:w-20" alt={t("cvAlt")} />
         </Link>
       </AnimatedArticle>
-      {/*ABOUT ME */}
       <AnimatedArticle
         direction="right"
         className="order-5 relative px-6 py-6 duration-200 aspect-auto col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1]"
@@ -99,7 +94,6 @@ export default async function Home({
           <p className="text-base font-mono">{t("aboutMeText")}</p>
         </div>
       </AnimatedArticle>
-      {/*PROJECTS */}
       <AnimatedArticle
         direction="left"
         className="order-6 relative px-6 py-6 duration-200 aspect-auto col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
@@ -124,8 +118,6 @@ export default async function Home({
           </div>
         </TransitionLink>
       </AnimatedArticle>
-
-      {/*LINKEDIN */}
       <AnimatedArticle
         direction="right"
         className="order-7 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
@@ -150,7 +142,6 @@ export default async function Home({
           />
         </Link>
       </AnimatedArticle>
-      {/*GITHUB */}
       <AnimatedArticle
         direction="left"
         className="order-8 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100"
@@ -170,7 +161,6 @@ export default async function Home({
           <Image src={githubIcon} className="md:w-20" width={60} alt="Github" />
         </Link>
       </AnimatedArticle>
-      {/*EMAIL */}
       <AnimatedArticle
         direction="left"
         className="order-9 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100"
@@ -190,7 +180,6 @@ export default async function Home({
           <Image src={emailIcon} className="md:w-20" width={60} alt="Email" />
         </Link>
       </AnimatedArticle>
-      {/*TECHNOLOGIES */}
       <AnimatedArticle
         direction="right"
         className="order-10 relative px-6 py-6 duration-200 aspect-auto col-span-3 md:col-span-2 backdrop-blur-3xl rounded-xl bg-black/[.1]"

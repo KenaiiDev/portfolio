@@ -17,13 +17,7 @@ const TransitionLink = ({ children, href, ...props }: TransitionLinkProps) => {
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
     event.preventDefault();
-
-    const reverseEvent = new Event("reverseAnimation");
-    window.dispatchEvent(reverseEvent);
-
-    setTimeout(() => {
-      router.push(href);
-    }, 500);
+    router.push(href);
   };
 
   return (

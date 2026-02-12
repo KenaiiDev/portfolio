@@ -29,10 +29,11 @@ export default async function Page({
           <div className="w-full flex justify-evenly">
             <Image
               src={pageMove}
-              alt="Page move"
+              alt=""
               width={30}
               height={30}
               className="transform rotate-180"
+              aria-hidden="true"
             />
             <h1 className="flex items-center text-white text-3xl w-full mx-6">
               {t("projectsTitle")}
@@ -53,10 +54,12 @@ export default async function Page({
         const projectImage = (
           <Image
             src={`/images/projects/${project.image}.webp`}
-            alt="Project image"
+            alt={`${project[lang].title} project screenshot`}
             width={300}
             height={168}
             className="w-full rounded-xl flex-grow my-4"
+            loading={index < 2 ? "eager" : "lazy"}
+            priority={index === 0}
           />
         );
         const linkStyles =
@@ -99,12 +102,13 @@ export default async function Page({
                   <Image
                     src={externalLink}
                     width={15}
-                    alt="Link"
+                    alt=""
                     className="absolute right-3 top-3 md:w-6"
+                    aria-hidden="true"
                   />
                   <Image
                     src={githubIcon}
-                    alt="Github icon"
+                    alt="View repository on GitHub"
                     width={50}
                     height={50}
                   />
@@ -118,12 +122,13 @@ export default async function Page({
                     <Image
                       src={externalLink}
                       width={15}
-                      alt="Link"
+                      alt=""
                       className="absolute right-3 top-3 md:w-6"
+                      aria-hidden="true"
                     />
                     <Image
                       src={liveIcon}
-                      alt="Live icon"
+                      alt="View live demo"
                       width={50}
                       height={50}
                     />

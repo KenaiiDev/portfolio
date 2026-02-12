@@ -21,7 +21,6 @@ export async function generateMetadata({
       title: t("projectsMetaTitle"),
       description: t("projectsMetaDescription"),
       url: `${SITE_CONFIG.url}/${locale}/projects`,
-      images: [SITE_CONFIG.ogImage],
     },
   };
 }

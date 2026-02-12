@@ -4,6 +4,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { LOCALES } from "@/constants/locales";
 import { SITE_CONFIG } from "@/constants/metadata";
 import { JetBrains_Mono, Fira_Code } from "next/font/google";
+import { AnimationProvider } from "@/contexts/AnimationContext";
 
 import { getBlobSources } from "@/lib/getBlobSources";
 
@@ -101,10 +102,12 @@ export default async function LocaleLayout({
       className={`${Renogare.className} ${jetBrainsMono.variable} ${firaCode.variable}`}
     >
       <body className="bg-periwinkle-gray-950">
-        <main className="w-full min-h-screen overflow-x-hidden relative">
-          <Background blobSources={blobSources} />
-          {children}
-        </main>
+        <AnimationProvider>
+          <main className="w-full min-h-screen overflow-x-hidden relative">
+            <Background blobSources={blobSources} />
+            {children}
+          </main>
+        </AnimationProvider>
       </body>
     </html>
   );

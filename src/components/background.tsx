@@ -19,70 +19,27 @@ const Background = React.memo(function Background({
   const [isReady, setIsReady] = useState<Boolean>(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (typeof window !== "undefined" && typeof document !== "undefined") {
-        const randomSizes: number[] = new Array(blobSources.length)
-          .fill(0)
-          .map(() => {
-            return Math.floor(
-              Math.random() * (maxSize - minSize + 1) + minSize,
-            );
-          });
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      const randomSizes: number[] = new Array(blobSources.length)
+        .fill(0)
+        .map(() => {
+          return Math.floor(Math.random() * (maxSize - minSize + 1) + minSize);
+        });
 
-        const generatedBlobs = blobSources.map((src, index) => ({
-          src,
-          width: randomSizes[index],
-          height: randomSizes[index],
-          x: Math.floor(Math.random() * window.innerWidth - randomSizes[index]),
-          y: Math.floor(
-            Math.random() * document.body.scrollHeight - randomSizes[index],
-          ),
-          transitionDuration: Math.floor(Math.random() * 15 + 25), //Transition between 25 and 40 seconds
-        }));
+      const generatedBlobs = blobSources.map((src, index) => ({
+        src,
+        width: randomSizes[index],
+        height: randomSizes[index],
+        x: Math.floor(Math.random() * window.innerWidth - randomSizes[index]),
+        y: Math.floor(
+          Math.random() * document.body.scrollHeight - randomSizes[index],
+        ),
+        transitionDuration: Math.floor(Math.random() * 15 + 25),
+      }));
 
-        setBlobProps(generatedBlobs);
-        setIsReady(true);
-
-        // setBlobProps([
-        //   {
-        //     src: PurpleBlob.src,
-        //     width: randomSizes[0],
-        //     height: randomSizes[0],
-        //     x: Math.floor(
-        //       Math.random() * window.innerWidth - randomSizes[0] / 2,
-        //     ),
-        //     y: Math.floor(
-        //       Math.random() * document.body.scrollHeight - randomSizes[0] / 2,
-        //     ),
-        //     transitionDuration: Math.floor(Math.random() * 15 + 25),
-        //   },
-        //   {
-        //     src: BlueBlob.src,
-        //     width: randomSizes[1],
-        //     height: randomSizes[1],
-        //     x: Math.floor(
-        //       Math.random() * window.innerWidth - randomSizes[1] / 2,
-        //     ),
-        //     y: Math.random() * document.body.scrollHeight - randomSizes[0] / 2,
-        //     transitionDuration: Math.floor(Math.random() * 15 + 25),
-        //   },
-        //   {
-        //     src: RoseBlob.src,
-        //     width: randomSizes[2],
-        //     height: randomSizes[2],
-        //     x: Math.floor(
-        //       Math.random() * window.innerWidth - randomSizes[2] / 2,
-        //     ),
-        //     y: Math.random() * document.body.scrollHeight - randomSizes[0] / 2,
-        //     transitionDuration: Math.floor(Math.random() * 15 + 25),
-        //   },
-        // ]);
-
-        // setIsReady(true);
-      }
-    }, 1000);
-
-    return () => clearTimeout(timer);
+      setBlobProps(generatedBlobs);
+      setIsReady(true);
+    }
   }, [maxSize, minSize, blobSources]);
 
   if (typeof window === "undefined") return null;

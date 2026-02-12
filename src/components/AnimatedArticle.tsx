@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView, MotionProps, useAnimation } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, MotionProps, useInView } from "framer-motion";
+import { useAnimation } from "@/contexts/AnimationContext";
 
 interface AnimatedArticleProps extends MotionProps {
   children: React.ReactNode;
@@ -26,52 +27,22 @@ const AnimatedArticle = ({
   hoverScale = true,
   ...props
 }: AnimatedArticleProps) => {
-  const controls = useAnimation();
   const ref = useRef(null);
-  const isInView = useInView(ref);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  const randomDelay = Math.random() * 0.25;
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { shouldAnimate } = useAnimation();
 
   const hoverEffect = hoverScale
     ? { scale: 1.02, transition: { duration: 0.15 } }
     : {};
 
-  useEffect(() => {
-    if (isInView && !hasAnimated) {
-      controls.start("visible");
-      setHasAnimated(true);
-    }
-  }, [controls, isInView, hasAnimated]);
-
-  const handleReverseAnimation = () => {
-    return new Promise<void>((resolve) => {
-      controls.start("hidden").then(() => {
-        resolve();
-      });
-    });
-  };
-
-  useEffect(() => {
-    const handleRevereEvent = () => {
-      handleReverseAnimation();
-    };
-
-    window.addEventListener("reverseAnimation", handleRevereEvent);
-
-    return () => {
-      window.removeEventListener("reverseAnimation", handleRevereEvent);
-    };
-  });
-
   return (
     <motion.article
       ref={ref}
       className={className}
-      animate={controls}
+      initial={shouldAnimate ? "hidden" : "visible"}
+      animate={shouldAnimate && isInView ? "visible" : "visible"}
       variants={direction === "left" ? leftVariants : rightVariants}
-      initial="hidden"
-      transition={{ ease: "easeOut", duration: 0.3, delay: randomDelay }}
+      transition={{ ease: "easeOut", duration: 0.3 }}
       whileHover={hoverEffect}
       {...props}
     >
