@@ -17,6 +17,7 @@ import projectsBg from "@/images/bg/projects.gif";
 import pageMove from "@/images/icons/page-move.svg";
 
 import TransitionLink from "@/components/TransitionLink";
+import { SITE_CONFIG } from "@/constants/metadata";
 
 export default async function Home({
   params: { locale },
@@ -51,6 +52,7 @@ export default async function Home({
           width={300}
           height={300}
           alt="Lucas Villanueva"
+          priority
         />
       </AnimatedArticle>
       {/*LANG SWITCH */}
@@ -75,8 +77,9 @@ export default async function Home({
         <Image
           src={externalLink}
           width={15}
-          alt="Link"
+          alt=""
           className="absolute right-3 top-3 md:w-6"
+          aria-hidden="true"
         />
         <Link
           target="_blank"
@@ -104,14 +107,16 @@ export default async function Home({
         <TransitionLink href="/projects">
           <Image
             src={projectsBg}
-            alt="Projects"
+            alt=""
             className="absolute h-full w-full inset-0 object-cover z-[-1] filter opacity-50"
+            aria-hidden="true"
           />
           <Image
             src={pageMove}
             width={25}
-            alt="Link"
+            alt=""
             className="absolute right-3 top-3"
+            aria-hidden="true"
           />
           <div className="mx-auto px-3 py-5 w-full h-full z-30 text-purple-haze-100 font-reno">
             <h2 className="text-3xl">{t("projectsTitle")}</h2>
@@ -128,12 +133,13 @@ export default async function Home({
         <Image
           src={externalLink}
           width={15}
-          alt="Link"
+          alt=""
           className="absolute right-3 top-3 md:w-6"
+          aria-hidden="true"
         />
         <Link
           target="_blank"
-          href="https://www.linkedin.com/in/lucasvillanueva1999/"
+          href={SITE_CONFIG.links.linkedin}
           className="relative w-full h-full flex justify-center items-center transition-all ease-in duration-200"
         >
           <Image
@@ -152,12 +158,13 @@ export default async function Home({
         <Image
           src={externalLink}
           width={15}
-          alt="Link"
+          alt=""
           className="absolute right-3 top-3 md:w-6"
+          aria-hidden="true"
         />
         <Link
           target="_blank"
-          href="https://github.com/KenaiiDev/"
+          href={SITE_CONFIG.links.github}
           className="relative w-full h-full flex justify-center items-center transition-all ease-in duration-200"
         >
           <Image src={githubIcon} className="md:w-20" width={60} alt="Github" />
@@ -171,12 +178,13 @@ export default async function Home({
         <Image
           src={externalLink}
           width={15}
-          alt="Link"
+          alt=""
           className="absolute right-3 top-3 md:w-6"
+          aria-hidden="true"
         />
         <Link
           target="_blank"
-          href="mailto:lucasvillanueva.dev@gmail.com"
+          href={`mailto:${SITE_CONFIG.links.email}`}
           className="relative w-full h-full flex justify-center items-center transition-all ease-in duration-200"
         >
           <Image src={emailIcon} className="md:w-20" width={60} alt="Email" />

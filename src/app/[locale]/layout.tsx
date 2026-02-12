@@ -61,21 +61,6 @@ export async function generateMetadata({
       title: t("homeMetaTitle"),
       description: t("homeMetaDescription"),
       siteName: SITE_CONFIG.name,
-      images: [
-        {
-          url: SITE_CONFIG.ogImage,
-          width: 1200,
-          height: 630,
-          alt: t("homeMetaTitle"),
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("homeMetaTitle"),
-      description: t("homeMetaDescription"),
-      images: [SITE_CONFIG.ogImage],
-      creator: "@your-twitter", // Opcional: cambia por tu Twitter
     },
     robots: {
       index: true,
