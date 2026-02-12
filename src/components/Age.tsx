@@ -12,7 +12,7 @@ function Age({ locale }: Props) {
 
   const t = useTranslations();
 
-  const birthDate = new Date("1999-10-1");
+  const birthDate = new Date("1999-11-1");
   const today = new Date();
 
   let age = today.getFullYear() - birthDate.getFullYear();
