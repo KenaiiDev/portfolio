@@ -1,17 +1,14 @@
-import React from "react";
+"use client";
 
-import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import React from "react";
 
 type Props = {
   locale: string;
+  ageLabel: string;
+  yearsLabel: string;
 };
 
-function Age({ locale }: Props) {
-  unstable_setRequestLocale(locale);
-
-  const t = useTranslations();
-
+function Age({ locale, ageLabel, yearsLabel }: Props) {
   const birthDate = new Date("1999-11-1");
   const today = new Date();
 
@@ -24,10 +21,10 @@ function Age({ locale }: Props) {
 
   return (
     <div className="w-full h-full text-center flex flex-col justify-center items-center text-purple-haze-100">
-      <span className="text-lg md:text-xl lg:text-2xl lg:my-2">{t("age")}</span>
+      <span className="text-lg md:text-xl lg:text-2xl lg:my-2">{ageLabel}</span>
       <h2 className="mx-1 text-xl md:text-2xl lg:text-4xl">{age}</h2>
       <span className="text-lg md:text-xl lg:text-2xl lg:my-2">
-        {t("years")}
+        {yearsLabel}
       </span>
     </div>
   );

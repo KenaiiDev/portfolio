@@ -65,7 +65,7 @@ export default async function Home({
         direction="right"
         className="order-3 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
-        <Age locale={locale} />
+        <Age locale={locale} ageLabel={t("age")} yearsLabel={t("years")} />
       </AnimatedArticle>
       {/*CV */}
       <AnimatedArticle
