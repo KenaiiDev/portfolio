@@ -16,6 +16,22 @@ export type ProjectType = {
 export const PROJECTS: ProjectType[] = [
   {
     en: {
+      title: "AMBA Transit Strike Checker",
+      description:
+        "Check if there's a public transport strike in Buenos Aires Metropolitan Area",
+    },
+    es: {
+      title: "Consulta de Paro de Transporte AMBA",
+      description:
+        "Consulta si hay paro de transporte público en el Área Metropolitana de Buenos Aires",
+    },
+    tech: ["NextJS", "Typescript", "Cheerio", "Upstash Redis", "Tailwind"],
+    image: "elParoDeHoy",
+    liveURL: "https://el-paro-de-hoy.vercel.app/",
+    repoURL: "https://github.com/KenaiiDev/el-paro-de-hoy",
+  },
+  {
+    en: {
       title: "URL Shortener",
       description: "Shorten your URLs with ease",
     },
