@@ -1,6 +1,7 @@
 import React from "react";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { LOCALES } from "@/constants/locales";
+import { SITE_CONFIG } from "@/constants/metadata";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -16,6 +17,12 @@ export async function generateMetadata({
   return {
     title: t("projectsMetaTitle"),
     description: t("projectsMetaDescription"),
+    openGraph: {
+      title: t("projectsMetaTitle"),
+      description: t("projectsMetaDescription"),
+      url: `${SITE_CONFIG.url}/${locale}/projects`,
+      images: [SITE_CONFIG.ogImage],
+    },
   };
 }
 

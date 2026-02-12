@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import localFont from "next/font/local";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { LOCALES } from "@/constants/locales";
+import { SITE_CONFIG } from "@/constants/metadata";
 import { JetBrains_Mono, Fira_Code } from "next/font/google";
 
 import { getBlobSources } from "@/lib/getBlobSources";
@@ -37,8 +38,62 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
 
   return {
-    title: t("homeMetaTitle"),
+    title: {
+      default: t("homeMetaTitle"),
+      template: `%s | ${SITE_CONFIG.name}`,
+    },
     description: t("homeMetaDescription"),
+    keywords: [
+      "Full Stack Developer",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Web Development",
+      "Portfolio",
+      "Argentina",
+    ],
+    authors: [{ name: SITE_CONFIG.name }],
+    creator: SITE_CONFIG.name,
+    openGraph: {
+      type: "website",
+      locale: locale,
+      url: `${SITE_CONFIG.url}/${locale}`,
+      title: t("homeMetaTitle"),
+      description: t("homeMetaDescription"),
+      siteName: SITE_CONFIG.name,
+      images: [
+        {
+          url: SITE_CONFIG.ogImage,
+          width: 1200,
+          height: 630,
+          alt: t("homeMetaTitle"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("homeMetaTitle"),
+      description: t("homeMetaDescription"),
+      images: [SITE_CONFIG.ogImage],
+      creator: "@your-twitter", // Opcional: cambia por tu Twitter
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    alternates: {
+      languages: {
+        en: `${SITE_CONFIG.url}/en`,
+        es: `${SITE_CONFIG.url}/es`,
+      },
+    },
   };
 }
 
