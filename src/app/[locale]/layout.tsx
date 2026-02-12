@@ -60,8 +60,8 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${Renogare.className} ${jetBrainsMono.variable} ${firaCode.variable}`}
     >
-      <body>
-        <main className="bg-periwinkle-gray-950 w-full overflow-x-hidden justify-center relative">
+      <body className="bg-periwinkle-gray-950">
+        <main className="w-full min-h-screen overflow-x-hidden relative">
           <Background blobSources={blobSources} />
           {children}
         </main>

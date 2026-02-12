@@ -2,10 +2,6 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 
-import PurpleBlob from "@/assets/purple-blob.svg";
-import BlueBlob from "@/assets/blue-blob.svg";
-import RoseBlob from "@/assets/rose-blob.svg";
-
 import type { BlobProps } from "@/types/BlobTypes";
 
 type props = {
@@ -94,43 +90,46 @@ const Background = React.memo(function Background({
   if (!isReady) return null;
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full overflow-hidden blur-3xl">
-      {blobProps.map((blob, index) => {
-        return (
-          <motion.img
-            alt="Background animation"
-            key={index}
-            className="absolute mix-blend-multiply"
-            loading="lazy"
-            fetchPriority="low"
-            src={blob.src}
-            initial={{ x: blob.x, y: blob.y, opacity: 0 }}
-            animate={{ x: blob.x, y: blob.y, opacity: 1 }}
-            transition={{
-              duration: blob.transitionDuration,
-              ease: "easeInOut",
-              repeatType: "reverse",
-            }}
-            width={blob.width}
-            height={blob.height}
-            onAnimationComplete={() => {
-              setBlobProps((prev) => {
-                const newBlobProps = [...prev];
-                newBlobProps[index].x = Math.floor(
-                  Math.random() * window.innerWidth - blob.width / 2,
-                );
-                newBlobProps[index].y = Math.floor(
-                  Math.random() * document.body.scrollHeight - blob.height / 2,
-                );
-                newBlobProps[index].transitionDuration = Math.floor(
-                  Math.random() * 15 + 25,
-                );
-                return newBlobProps;
-              });
-            }}
-          />
-        );
-      })}
+    <div className="fixed inset-0 w-full h-full overflow-hidden -z-10">
+      <div className="absolute inset-0 blur-3xl">
+        {blobProps.map((blob, index) => {
+          return (
+            <motion.img
+              alt="Background animation"
+              key={index}
+              className="absolute mix-blend-multiply"
+              loading="lazy"
+              fetchPriority="low"
+              src={blob.src}
+              initial={{ x: blob.x, y: blob.y, opacity: 0 }}
+              animate={{ x: blob.x, y: blob.y, opacity: 1 }}
+              transition={{
+                duration: blob.transitionDuration,
+                ease: "easeInOut",
+                repeatType: "reverse",
+              }}
+              width={blob.width}
+              height={blob.height}
+              onAnimationComplete={() => {
+                setBlobProps((prev) => {
+                  const newBlobProps = [...prev];
+                  newBlobProps[index].x = Math.floor(
+                    Math.random() * window.innerWidth - blob.width / 2,
+                  );
+                  newBlobProps[index].y = Math.floor(
+                    Math.random() * document.body.scrollHeight -
+                      blob.height / 2,
+                  );
+                  newBlobProps[index].transitionDuration = Math.floor(
+                    Math.random() * 15 + 25,
+                  );
+                  return newBlobProps;
+                });
+              }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 });

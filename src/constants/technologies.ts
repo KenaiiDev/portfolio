@@ -1,0 +1,16 @@
+export const TECHNOLOGIES = [
+  { name: "HTML5", icon: "/images/tech/01-html5.svg" },
+  { name: "CSS3", icon: "/images/tech/02-css3.svg" },
+  { name: "JavaScript", icon: "/images/tech/03-javascript.svg" },
+  { name: "TypeScript", icon: "/images/tech/04-typescript.svg" },
+  { name: "React", icon: "/images/tech/05-react.svg" },
+  { name: "Next.js", icon: "/images/tech/06-nextjs.svg" },
+  { name: "Tailwind CSS", icon: "/images/tech/07-tailwind.svg" },
+  { name: "Zustand", icon: "/images/tech/08-zustand.png" },
+  { name: "Node.js", icon: "/images/tech/09-nodejs.svg" },
+  { name: "Prisma", icon: "/images/tech/10-prisma.svg" },
+  { name: "PHP", icon: "/images/tech/11-php.svg" },
+  { name: "MongoDB", icon: "/images/tech/12-mongodb.svg" },
+  { name: "PostgreSQL", icon: "/images/tech/13-postgresql.svg" },
+  { name: "Git", icon: "/images/tech/14-git.svg" },
+] as const;

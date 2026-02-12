@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import fs from "fs";
-import path from "path";
 
 import Age from "@/components/Age";
+import LocalSwitch from "@/components/LocalSwitch";
 import { Link } from "@/navigation";
 import AnimatedArticle from "@/components/AnimatedArticle";
+import { TECHNOLOGIES } from "@/constants/technologies";
 
 import ProfileImage from "@/images/profile.webp";
 import linkedinIcon from "@/images/icons/linkedin-icon.svg";
@@ -13,9 +13,9 @@ import githubIcon from "@/images/icons/github-icon.svg";
 import cvIcon from "@/images/icons/cv-icon.svg";
 import emailIcon from "@/images/icons/email-icon.svg";
 import externalLink from "@/images/icons/external-link.svg";
-import LocalSwitch from "@/components/LocalSwitch";
 import projectsBg from "@/images/bg/projects.gif";
 import pageMove from "@/images/icons/page-move.svg";
+
 import TransitionLink from "@/components/TransitionLink";
 
 export default async function Home({
@@ -25,9 +25,6 @@ export default async function Home({
 }) {
   unstable_setRequestLocale(locale);
   const t = await getTranslations();
-
-  const imageDirectory = path.join(process.cwd(), "/public/images/tech");
-  const imageFilenames = fs.readdirSync(imageDirectory);
 
   return (
     <section className="w-full px-4 py-6 mx-auto max-w-screen-lg grid grid-cols-3 md:grid-cols-4 gap-4">
@@ -191,11 +188,11 @@ export default async function Home({
         className="order-10 relative px-6 py-6 duration-200 aspect-auto col-span-3 md:col-span-2 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
         <div className="flex flex-wrap w-full h-full justify-evenly items-center">
-          {imageFilenames.map((image) => (
+          {TECHNOLOGIES.map((tech) => (
             <Image
-              key={image}
-              src={`/images/tech/${image}`}
-              alt={image}
+              key={tech.name}
+              src={tech.icon}
+              alt={tech.name}
               width={30}
               height={30}
               className="m-2 md:w-9 md:h-9 lg:w-12 lg:h-12"
