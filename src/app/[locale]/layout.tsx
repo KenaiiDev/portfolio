@@ -1,15 +1,14 @@
-import { getTranslations } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
 import localFont from "next/font/local";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { LOCALES } from "@/constants/locales";
 import { SITE_CONFIG } from "@/constants/metadata";
 import { JetBrains_Mono, Fira_Code } from "next/font/google";
 import { AnimationProvider } from "@/contexts/AnimationContext";
-
 import { getBlobSources } from "@/lib/getBlobSources";
-
-import "./globals.css";
 import Background from "@/components/background";
+import "./globals.css";
 
 const Renogare = localFont({
   src: "../../../public/fonts/Renogare-Regular.otf",
@@ -95,6 +94,7 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
     <html
@@ -102,12 +102,14 @@ export default async function LocaleLayout({
       className={`${Renogare.className} ${jetBrainsMono.variable} ${firaCode.variable}`}
     >
       <body className="bg-periwinkle-gray-950">
-        <AnimationProvider>
-          <main className="w-full min-h-screen overflow-x-hidden relative">
-            <Background blobSources={blobSources} />
-            {children}
-          </main>
-        </AnimationProvider>
+        <NextIntlClientProvider messages={messages}>
+          <AnimationProvider>
+            <main className="w-full min-h-screen overflow-x-hidden relative">
+              <Background blobSources={blobSources} />
+              {children}
+            </main>
+          </AnimationProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
