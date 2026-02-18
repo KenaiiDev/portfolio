@@ -8,6 +8,7 @@ import { JetBrains_Mono, Fira_Code } from "next/font/google";
 import { AnimationProvider } from "@/contexts/AnimationContext";
 import { getBlobSources } from "@/lib/getBlobSources";
 import Background from "@/components/background";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const Renogare = localFont({
@@ -110,6 +111,7 @@ export default async function LocaleLayout({
             </main>
           </AnimationProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
