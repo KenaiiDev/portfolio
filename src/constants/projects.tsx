@@ -16,6 +16,22 @@ export type ProjectType = {
 export const PROJECTS: ProjectType[] = [
   {
     en: {
+      title: "Celiac Products Checker",
+      description:
+        "Check if food products are gluten-free using ANMAT's official database",
+    },
+    es: {
+      title: "Verificador de Productos para Celíacos",
+      description:
+        "Consulta si productos alimenticios son libres de gluten usando la base de datos de ANMAT",
+    },
+    tech: ["NextJS", "Typescript", "Puppeteer", "Upstash Redis", "Tailwind"],
+    image: "sintacc",
+    liveURL: "https://sintacc-six.vercel.app/",
+    repoURL: "https://github.com/KenaiiDev/sintacc",
+  },
+  {
+    en: {
       title: "AMBA Transit Strike Checker",
       description:
         "Check if there's a public transport strike in Buenos Aires Metropolitan Area",
