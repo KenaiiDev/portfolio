@@ -51,7 +51,6 @@ export default async function Page({
       {PROJECTS.map((project, index) => {
         const lang = locale === "es" ? "es" : "en";
         const direction = index % 2 === 0 ? "left" : "right";
-        const randomDelay = Math.random() * 0.2;
         const projectImage = (
           <Image
             src={`/images/projects/${project.image}.webp`}
@@ -71,7 +70,6 @@ export default async function Page({
             direction={direction}
             className="col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1] px-4 py-6 flex flex-col md:flex-row items-center gap-4"
             hoverScale={false}
-            delay={randomDelay}
           >
             {/* PROJECT IMAGE */}
             <div className="w-full h-auto flex items-center justify-center">
