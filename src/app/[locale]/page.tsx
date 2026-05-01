@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-import Age from "@/components/Age";
+import Location from "@/components/Location";
+import Experience from "@/components/Experience";
 import LocalSwitch from "@/components/LocalSwitch";
 import { Link } from "@/navigation";
 import AnimatedArticle from "@/components/AnimatedArticle";
@@ -64,7 +65,7 @@ export default async function Home({
         direction="right"
         className="order-3 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
-        <Age locale={locale} ageLabel={t("age")} yearsLabel={t("years")} />
+        <Location locationLabel={t("locationLabel")} location={t("location")} />
       </AnimatedArticle>
       <AnimatedArticle
         direction="left"
@@ -96,7 +97,33 @@ export default async function Home({
       </AnimatedArticle>
       <AnimatedArticle
         direction="left"
-        className="order-6 relative px-6 py-6 duration-200 aspect-auto col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
+        className="order-6 relative px-6 py-6 duration-200 aspect-auto col-span-3 md:col-span-4 backdrop-blur-3xl rounded-xl bg-black/[.1]"
+      >
+        <Experience
+          title={t("experienceTitle")}
+          experiences={[
+            {
+              role: t("expFreelanceRole"),
+              company: t("expFreelanceCompany"),
+              date: t("expFreelanceDate"),
+            },
+            {
+              role: t("expMsaRole"),
+              company: t("expMsaCompany"),
+              date: t("expMsaDate"),
+              description: t("expMsaDesc"),
+            },
+            {
+              role: t("expMmRole"),
+              company: t("expMmCompany"),
+              date: t("expMmDate"),
+            },
+          ]}
+        />
+      </AnimatedArticle>
+      <AnimatedArticle
+        direction="left"
+        className="order-7 relative px-6 py-6 duration-200 aspect-auto col-span-3 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
       >
         <TransitionLink href="/projects">
           <Image
@@ -120,7 +147,7 @@ export default async function Home({
       </AnimatedArticle>
       <AnimatedArticle
         direction="right"
-        className="order-7 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
+        className="order-8 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] overflow-hidden cursor-pointer hover:scale-[1.02] active:scale-100"
       >
         <Image
           src={externalLink}
@@ -144,7 +171,7 @@ export default async function Home({
       </AnimatedArticle>
       <AnimatedArticle
         direction="left"
-        className="order-8 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100"
+        className="order-9 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100"
       >
         <Image
           src={externalLink}
@@ -163,7 +190,7 @@ export default async function Home({
       </AnimatedArticle>
       <AnimatedArticle
         direction="left"
-        className="order-9 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100"
+        className="order-10 relative px-6 py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1] cursor-pointer hover:scale-[1.02] active:scale-100"
       >
         <Image
           src={externalLink}
@@ -182,7 +209,7 @@ export default async function Home({
       </AnimatedArticle>
       <AnimatedArticle
         direction="right"
-        className="order-10 relative px-6 py-6 duration-200 aspect-auto col-span-3 md:col-span-2 backdrop-blur-3xl rounded-xl bg-black/[.1]"
+        className="order-11 relative px-6 py-6 duration-200 aspect-auto col-span-3 md:col-span-2 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
         <div className="flex flex-wrap w-full h-full justify-evenly items-center">
           {TECHNOLOGIES.map((tech) => (
