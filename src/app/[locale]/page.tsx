@@ -65,7 +65,7 @@ export default async function Home({
         direction="right"
         className="order-3 relative flex items-center justify-center px-4 py-4 md:px-6 md:py-6 duration-200 aspect-square col-span-1 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
-        <Location locationLabel={t("locationLabel")} location={t("location")} />
+        <Location location={t("location")} />
       </AnimatedArticle>
       <AnimatedArticle
         direction="left"
@@ -211,16 +211,20 @@ export default async function Home({
         direction="right"
         className="order-11 relative px-6 py-6 duration-200 aspect-auto col-span-3 md:col-span-2 backdrop-blur-3xl rounded-xl bg-black/[.1]"
       >
-        <div className="flex flex-wrap w-full h-full justify-evenly items-center">
+        <div className="flex flex-wrap w-full h-full justify-center content-center gap-2 sm:gap-3 md:gap-4">
           {TECHNOLOGIES.map((tech) => (
-            <Image
-              key={tech.name}
-              src={tech.icon}
-              alt={tech.name}
-              width={30}
-              height={30}
-              className="m-2 md:w-9 md:h-9 lg:w-12 lg:h-12"
-            />
+            <div key={tech.name} className="relative group flex justify-center">
+              <Image
+                src={tech.icon}
+                alt={tech.name}
+                width={30}
+                height={30}
+                className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 transition-transform hover:scale-110"
+              />
+              <span className="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 whitespace-nowrap z-50 pointer-events-none">
+                {tech.name}
+              </span>
+            </div>
           ))}
         </div>
       </AnimatedArticle>
