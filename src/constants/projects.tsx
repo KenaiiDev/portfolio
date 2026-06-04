@@ -16,14 +16,14 @@ export type ProjectType = {
 export const PROJECTS: ProjectType[] = [
   {
     en: {
-      title: "Celiac Products Checker",
+      title: "Gluten-Free Product Verifier",
       description:
-        "Check if food products are gluten-free using ANMAT's official database",
+        "Search ANMAT's official ALG database to check if packaged foods are celiac-safe. Puppeteer scraper, Upstash Redis cache, debounced multi-field search, GitHub Actions cron, and a 3-state animated background.",
     },
     es: {
-      title: "Verificador de Productos para Celíacos",
+      title: "Verificador de Productos Sin TACC",
       description:
-        "Consulta si productos alimenticios son libres de gluten usando la base de datos de ANMAT",
+        "Consultá el Listado ALG oficial de ANMAT para ver si un producto es apto para celíacos. Scraper con Puppeteer, caché en Upstash Redis, búsqueda multi-campo con debounce, cron en GitHub Actions y fondo animado de 3 estados.",
     },
     tech: ["NextJS", "Typescript", "Puppeteer", "Upstash Redis", "Tailwind"],
     image: "sintacc",
@@ -32,81 +32,18 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     en: {
-      title: "AMBA Transit Strike Checker",
+      title: "AMBA Transit & Services Strike Checker",
       description:
-        "Check if there's a public transport strike in Buenos Aires Metropolitan Area",
+        "Daily check for strikes across 10 sectors in Buenos Aires (buses, trains, subways, airlines, education, health, public sector, banks, waste collection, justice). Google News + Cheerio scraping, URL-decoder pipeline, regex extraction, Upstash Redis cache, dynamic favicon.",
     },
     es: {
-      title: "Consulta de Paro de Transporte AMBA",
+      title: "Consulta de Paros AMBA",
       description:
-        "Consulta si hay paro de transporte público en el Área Metropolitana de Buenos Aires",
+        "Consulta diaria de paros en 10 sectores de Buenos Aires (colectivos, trenes, subtes, aeronáutico, educación, salud, administración pública, bancarios, recolección, justicia). Scraping con Google News + Cheerio, pipeline de decodificación de URLs, extracción por regex, caché en Upstash Redis, favicon dinámico.",
     },
     tech: ["NextJS", "Typescript", "Cheerio", "Upstash Redis", "Tailwind"],
     image: "elParoDeHoy",
     liveURL: "https://el-paro-de-hoy.vercel.app/",
     repoURL: "https://github.com/KenaiiDev/el-paro-de-hoy",
-  },
-  {
-    en: {
-      title: "URL Shortener",
-      description: "Shorten your URLs with ease",
-    },
-    es: {
-      title: "Acortador de URL",
-      description: "Acorta tus URLs con facilidad",
-    },
-    tech: [
-      "ReactJS",
-      "Express",
-      "Typescript",
-      "TailwindCSS",
-      "MongoDB",
-      "Prisma",
-    ],
-    image: "urlShortener",
-    liveURL: "https://url-shortener-frontend-six.vercel.app/",
-    repoURL: "https://github.com/KenaiiDev/url-shortener-frontend",
-  },
-  {
-    en: {
-      title: "Windbnb",
-      description: "Find the perfect place to stay",
-    },
-    es: {
-      title: "Windbnb",
-      description: "Encuentra el lugar perfecto para quedarte",
-    },
-    tech: ["ReactJS", "Javascript", "CSS"],
-    image: "windbnb",
-    liveURL: "https://windbnb-lucasv7588.onrender.com/",
-    repoURL: "https://github.com/KenaiiDev/devchallenges-windbnb",
-  },
-  {
-    en: {
-      title: "Inputs Collection",
-      description: "A collection of inputs",
-    },
-    es: {
-      title: "Coleccion de Inputs",
-      description: "Una colección de inputs",
-    },
-    tech: ["ReactJS", "Javascript", "CSS"],
-    image: "inputsCollection",
-    liveURL: "https://devchallenges-inputs-lucasv7588.onrender.com/",
-    repoURL: "https://github.com/KenaiiDev/devchallenges-inputs",
-  },
-  {
-    en: {
-      title: "Quotes Generator",
-      description: "Generate random quotes",
-    },
-    es: {
-      title: "Generador de Frases",
-      description: "Genera frases aleatorias",
-    },
-    tech: ["ReactJS", "Javascript", "CSS"],
-    image: "quoteGenerator",
-    liveURL: "https://quote-generator-lucasv7588.onrender.com/",
-    repoURL: "https://github.com/KenaiiDev/Quote-generator",
   },
 ];
