@@ -164,7 +164,7 @@ export default function HomeContent({ lang, translations: t }: Props) {
                 key={project.image}
                 className="bg-periwinkle-gray-900 border border-periwinkle-gray-800 rounded-2xl p-6 hover:border-periwinkle-gray-700 transition-colors"
               >
-                <div className="max-w-[300px] rounded-xl mb-4 overflow-hidden">
+                <div className="max-w-[300px] rounded-xl mb-4 overflow-hidden relative">
                   <Image
                     src={`/images/projects/${project.image}.webp`}
                     alt={project[lang].title}
@@ -172,6 +172,11 @@ export default function HomeContent({ lang, translations: t }: Props) {
                     height={168}
                     className="w-full h-full object-cover"
                   />
+                  {project.type === "cli" && (
+                    <span className="absolute top-2 right-2 px-2 py-1 bg-purple-haze-600/90 backdrop-blur text-white text-xs font-medium rounded-md">
+                      CLI
+                    </span>
+                  )}
                 </div>
                 <h3 className="text-white font-medium text-lg mb-2">
                   {project[lang].title}

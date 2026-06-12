@@ -11,6 +11,7 @@ export type ProjectType = {
   liveURL?: string;
   repoURL: string;
   image: string;
+  type?: "web" | "cli";
 };
 
 export const PROJECTS: ProjectType[] = [
@@ -77,5 +78,21 @@ export const PROJECTS: ProjectType[] = [
     image: "slicer",
     liveURL: "https://slicer-ecru.vercel.app/",
     repoURL: "https://github.com/KenaiiDev/slicer",
+  },
+  {
+    en: {
+      title: "CV Adapter — Job-Offer-Tailored CVs with AI",
+      description:
+        "TypeScript CLI that adapts your existing CV to specific job offers using multi-provider AI (Groq, Gemini, OpenAI, Anthropic, Ollama). Outputs ATS-friendly Harvard-format PDFs directly via pdfmake — no browser dependencies, fully local.",
+    },
+    es: {
+      title: "CV Adapter — CVs Adaptados a Ofertas con IA",
+      description:
+        "CLI en TypeScript que adapta tu CV existente a ofertas de trabajo específicas usando IA multi-provider (Groq, Gemini, OpenAI, Anthropic, Ollama). Produce PDFs ATS-friendly en formato Harvard directamente con pdfmake — sin dependencias de navegador, 100% local.",
+    },
+    tech: ["TypeScript", "Node.js", "AI"],
+    repoURL: "https://github.com/KenaiiDev/cv-adapter",
+    image: "cvAdapter",
+    type: "cli",
   },
 ];
