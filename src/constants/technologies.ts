@@ -1,3 +1,32 @@
+export type TechCategory = {
+  name: string;
+  label: string;
+  items: readonly string[];
+};
+
+export const TECH_CATEGORIES: TechCategory[] = [
+  {
+    name: "frontend",
+    label: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Shadcn/ui", "Storybook"],
+  },
+  {
+    name: "backend",
+    label: "Backend",
+    items: ["Node.js", "NestJS", "Express", "Prisma ORM", "MongoDB", "MySQL"],
+  },
+  {
+    name: "testing",
+    label: "Testing",
+    items: ["Vitest", "Playwright", "Puppeteer", "Testing Library"],
+  },
+  {
+    name: "tools",
+    label: "Tools",
+    items: ["Git", "Docker", "ESLint", "Figma"],
+  },
+];
+
 export const TECHNOLOGIES = [
   { name: "React", icon: "/images/tech/05-react.svg" },
   { name: "Next.js", icon: "/images/tech/06-nextjs.svg" },
