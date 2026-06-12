@@ -63,35 +63,35 @@ export default function HomeContent({ lang, translations: t }: Props) {
             <p className="text-periwinkle-gray-500 text-base mb-3">
               {t.greetings}
             </p>
-            <h1 className="text-8xl font-bold text-white mb-1">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-1">
               {t.name}
             </h1>
-            <h1 className="text-8xl font-bold text-purple-haze-400">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-purple-haze-400">
               {t.lastName}
             </h1>
-            <p className="text-periwinkle-gray-300 mt-3 text-2xl">
+            <p className="text-periwinkle-gray-300 mt-3 text-xl sm:text-2xl">
               {t.subtitle}
             </p>
           </div>
 
-          <div className="flex items-center justify-center gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-10">
             <a
               href={t.cvLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 border border-periwinkle-gray-700 text-periwinkle-gray-400 hover:text-white hover:border-periwinkle-gray-500 transition-colors text-base rounded-xl"
+              className="w-full sm:w-auto px-6 py-3 border border-periwinkle-gray-700 text-periwinkle-gray-400 hover:text-white hover:border-periwinkle-gray-500 transition-colors text-base rounded-xl text-center"
             >
               {t.cvAlt}
             </a>
             <a
               href={`mailto:${SITE_CONFIG.links.email}`}
-              className="px-6 py-3 bg-purple-haze-600 hover:bg-purple-haze-500 text-white text-base rounded-xl transition-colors"
+              className="w-full sm:w-auto px-6 py-3 bg-purple-haze-600 hover:bg-purple-haze-500 text-white text-base rounded-xl transition-colors text-center"
             >
               Get in touch
             </a>
           </div>
 
-          <div className="flex flex-row gap-4 items-stretch">
+          <div className="flex flex-col md:flex-row gap-4 items-stretch">
             <div className="flex-1 bg-periwinkle-gray-900 border border-periwinkle-gray-800 rounded-2xl p-6">
               <p className="text-sm uppercase tracking-widest text-periwinkle-gray-500 mb-4">
                 {t.aboutMe}
@@ -100,7 +100,7 @@ export default function HomeContent({ lang, translations: t }: Props) {
                 {t.aboutMeText}
               </p>
             </div>
-            <div className="flex-1 max-w-xs bg-periwinkle-gray-900 border border-periwinkle-gray-800 rounded-2xl p-6">
+            <div className="flex-1 md:max-w-xs bg-periwinkle-gray-900 border border-periwinkle-gray-800 rounded-2xl p-6">
               <p className="text-sm uppercase tracking-widest text-periwinkle-gray-500 mb-4">
                 Stack
               </p>
@@ -158,13 +158,13 @@ export default function HomeContent({ lang, translations: t }: Props) {
           <h2 className="text-sm uppercase tracking-widest text-periwinkle-gray-500 mb-6">
             {t.projectsTitle}
           </h2>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {PROJECTS.map((project) => (
               <div
                 key={project.image}
                 className="bg-periwinkle-gray-900 border border-periwinkle-gray-800 rounded-2xl p-6 hover:border-periwinkle-gray-700 transition-colors"
               >
-                <div className="max-w-[300px] rounded-xl mb-4 overflow-hidden relative">
+                <div className="max-w-[300px] w-full rounded-xl mb-4 overflow-hidden relative">
                   <Image
                     src={`/images/projects/${project.image}.webp`}
                     alt={project[lang].title}
@@ -181,7 +181,7 @@ export default function HomeContent({ lang, translations: t }: Props) {
                 <h3 className="text-white font-medium text-lg mb-2">
                   {project[lang].title}
                 </h3>
-                <p className="text-periwinkle-gray-400 text-sm mb-4">
+                <p className="text-periwinkle-gray-400 text-sm mb-4 line-clamp-3">
                   {project[lang].description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -220,16 +220,16 @@ export default function HomeContent({ lang, translations: t }: Props) {
         </section>
 
         <section className="border-t border-periwinkle-gray-800 pt-12">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-center sm:text-left">
             <div>
               <p className="text-sm uppercase tracking-widest text-periwinkle-gray-500 mb-2">
                 Contact
               </p>
-              <p className="text-periwinkle-gray-400 text-base">
+              <p className="text-periwinkle-gray-400 text-base break-all">
                 {SITE_CONFIG.links.email}
               </p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center sm:justify-end">
               <a
                 href={SITE_CONFIG.links.github}
                 target="_blank"
